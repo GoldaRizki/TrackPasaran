@@ -16,7 +16,9 @@ Ini adalah algoritma yang digunakan untuk Mencari hari pasaran berdasarkan Input
 
 ### Cara Penggunaan 
 
-'''Buka pasaran.js lalu ubah inputan tanggal lahir pada variabel disana. Kemudian Jalankan Demo.html untuk melihat hasilnya. Silahkan Mencoba :yum: *'''
+'''
+Buka pasaran.js lalu ubah inputan tanggal lahir pada variabel disana. Kemudian Jalankan Demo.html untuk melihat hasilnya. Silahkan Mencoba :yum: 
+'''
 
 
 > Catatan : Hanya bisa untuk tanggal sebelum 1 Januari 2022
