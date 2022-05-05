@@ -1,22 +1,22 @@
 
-// Masukkan tanggal lahir kedalam variabel ini...
+// Masukkan tanggal lahir kedalam variabel ini...    //
 
 
-tanggal = 31;
-bulan = 12;
-tahun = 1959;
+tanggal = 30;
+bulan = 6;
+tahun = 2020;
 
 
-// -------------------------------------
+// -------------------------------------------------//
 
 t = new Date();
-tanggalSekarang = t.getDate();
-bulanSekarang = t.getMonth() + 1;
-tahunSekarang = t.getFullYear();
+//tanggalSekarang = t.getDate();
+//bulanSekarang = t.getMonth() + 1;
+//tahunSekarang = t.getFullYear();
 
-//tanggalSekarang = 15;
-//bulanSekarang = 12;
-//tahunSekarang = 2022;
+tanggalSekarang = 1;
+bulanSekarang = 1;
+tahunSekarang = 2022;
 
 bulanArr = [31,28,31,30,31,30,31,31,30,31,30,31];
 hariArr = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -35,7 +35,7 @@ selisihTahun = tahunSekarang - tahun;
 
 
 if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
-    alert("javanese hood niggas 12 : Fek gak ril");
+
     if(tahunSekarang - tahun >= 2){
     
         if((tanggalSekarang >=29 && bulanSekarang == 2) || bulanSekarang > 2){
@@ -164,7 +164,7 @@ if(bulanSekarang > bulan){
 }
 
 if(selisihBulan >= 2){
-    document.write("<br>");
+   
     for(k = 0; k < selisihBulan-1 ; k++){
         bulanTemp--;
         if(bulanTemp == 0){
@@ -179,7 +179,7 @@ if(selisihBulan >= 2){
             hitungHari += bulanArr[bulanTemp-1]%jumlahHari;
            
         }
-        document.write(bulanTemp + " ");
+      
     
 
     }
@@ -197,8 +197,7 @@ if(selisihBulan == 1){
             tahunSekarang--;
             
         }
-        document.write(bulanTemp + " ");
-        document.write("<br>");
+      
 
 
         if((tahunSekarang % 4 == 0) && bulanTemp == 2){
@@ -236,7 +235,7 @@ if(selisihBulan == 0){
                 if((tanggalSekarang >=29 && bulanSekarang == 2) || bulanSekarang > 2){
                     //365
                     jmlTemp = 365;
-                    alert("Javanese Hood Niggas 13 : Sapi Blonjo");
+                    
            
                 }else{
                     //366
@@ -269,13 +268,16 @@ p = sisaHari;
 while (p>0) {
     hariCounter--;
     if (hariCounter == 0) {
-        hariCounter = 7;
+        hariCounter = jumlahHari;
     }
     p--;
 }
 
+document.write("<h1>Track Weton</h1>")
 document.write("<br>inputan " + tanggal + "/" + bulan + "/" + tahun + "<br>");
-document.write("sisa hari " + hitungHari%jumlahHari + "<br>");   
-document.write("hari " + hariArr[hariCounter-1] + "<br>"); 
+//document.write("sisa hari " + hitungHari%jumlahHari + "<br>");   
+document.write("<b>Pasaran :  " + pasaranArr[hariCounter-1] + "</b><br>"); 
+document.writeln("<br>");
+document.writeln("*Hanya bisa menghitung tanggal lahir sebelum 1 januari 2022")
 //document.writeln("pasaran: "+ hariCounter +"<br>"); 
 //document.writeln("Pasaran: " + pasaranArr[hariCounter-1]);
