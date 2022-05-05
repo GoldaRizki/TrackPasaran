@@ -273,7 +273,7 @@ while (p>0) {
     p--;
 }
 
-document.write("<h1>Track Weton</h1>")
+document.write("<h1>Track Pasaran</h1>")
 document.write("<br>inputan " + tanggal + "/" + bulan + "/" + tahun + "<br>");
 //document.write("sisa hari " + hitungHari%jumlahHari + "<br>");   
 document.write("<b>Pasaran :  " + pasaranArr[hariCounter-1] + "</b><br>"); 
