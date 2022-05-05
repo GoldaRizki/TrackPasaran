@@ -3,7 +3,7 @@
 Ini adalah algoritma yang digunakan untuk mencari hari pasaran dengan menggunakan Javascript.
 
 ### Apa itu Dino Pasaran?
-> Pasaran adalah hari pada penanggalan jawa. Dengan kita mengetahui pasaran kita. Kita dapat memprediksi peruntungan bahkan jodoh berdasarkan perhitungan weton jawa. 
+> Dino Pasaran adalah hari pada penanggalan jawa. Dengan kita mengetahui pasaran kita. Kita dapat memprediksi peruntungan bahkan jodoh berdasarkan perhitungan weton jawa. 
 
 ### Dino Pasaran / Hari Pasaran Jawa: 
 
