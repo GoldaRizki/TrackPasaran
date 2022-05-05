@@ -1,6 +1,6 @@
 # Track Pasaran
 
-Ini adalah algoritma yang digunakan untuk Mencari hari pasaran berdasarkan Inputan Tanggal.
+Ini adalah algoritma yang digunakan untuk mencari hari pasaran dengan menggunakan Javascript.
 
 ### Apa itu Dino Pasaran?
 > Pasaran adalah hari pada penanggalan jawa. Dengan kita mengetahui pasaran kita. Kita dapat memprediksi peruntungan bahkan jodoh berdasarkan perhitungan weton jawa. 
