@@ -1,17 +1,17 @@
 
 // ini sebagai inputan
-tanggal = 18;
-bulan = 2;
-tahun = 1926;
+tanggal = 31;
+bulan = 12;
+tahun = 1959;
 
 t = new Date();
 //tanggalSekarang = t.getDate();
 //bulanSekarang = t.getMonth() + 1;
 //tahunSekarang = t.getFullYear();
 
-tanggalSekarang = 29;
-bulanSekarang = 2;
-tahunSekarang = 2020;
+tanggalSekarang = 15;
+bulanSekarang = 12;
+tahunSekarang = 2022;
 
 bulanArr = [31,28,31,30,31,30,31,31,30,31,30,31];
 hariArr = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -218,13 +218,34 @@ if(selisihBulan == 0){
 
 
     }else if(tanggalSekarang < tanggal){
-        if((tahunSekarang % 4 == 0) && bulanTemp == 2){
-            hariBulan = 29;
+        jmlTemp = 0;
+        selisihTanggal = tanggal - tanggalSekarang;
+        if(tahunSekarang % 4 == 0){
+            if((tanggalSekarang >=29 && bulanSekarang == 2) || bulanSekarang > 2){
+                jmlTemp = 366;
+            }else{
+                jmlTemp = 365;
+            }
         }else{
-            hariBulan = bulanArr[bulanTemp-1];
+            if((tahunSekarang-1) % 4 == 0){
+                if((tanggalSekarang >=29 && bulanSekarang == 2) || bulanSekarang > 2){
+                    //365
+                    jmlTemp = 365;
+                    alert("Javanese Hood Niggas 13 : Sapi Blonjo");
+           
+                }else{
+                    //366
+                    jmlTemp = 366;
+                    
+                }
+            }else{
+                jmlTemp = 365;
+            }
+
+        
         }
-        selisihTanggal = hariBulan - tanggal;
-        hitungHari += (selisihTanggal % 7);
+        hitungHari += (jmlTemp - selisihTanggal)%7;
+       
     }
 
     
@@ -236,7 +257,7 @@ sisaHari = hitungHari % 7;
 
 
 //hariCounter = t.getDay()+1;
-hariCounter = 7;
+hariCounter = 5;
 //hariCounter = 1; // diambil dari perhitungan pasaran dengan tanggal 1 jan 22 sebagai patokan
 p = sisaHari;
 
