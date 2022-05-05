@@ -1,25 +1,31 @@
 
-// ini sebagai inputan
+// Masukkan tanggal lahir kedalam variabel ini...
+
+
 tanggal = 31;
 bulan = 12;
 tahun = 1959;
 
-t = new Date();
-//tanggalSekarang = t.getDate();
-//bulanSekarang = t.getMonth() + 1;
-//tahunSekarang = t.getFullYear();
 
-tanggalSekarang = 15;
-bulanSekarang = 12;
-tahunSekarang = 2022;
+// -------------------------------------
+
+t = new Date();
+tanggalSekarang = t.getDate();
+bulanSekarang = t.getMonth() + 1;
+tahunSekarang = t.getFullYear();
+
+//tanggalSekarang = 15;
+//bulanSekarang = 12;
+//tahunSekarang = 2022;
 
 bulanArr = [31,28,31,30,31,30,31,31,30,31,30,31];
 hariArr = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 pasaranArr = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"];
 
-document.write(tahunSekarang);
+jumlahHari = 5;
 
-lebih = true;
+
+
 
 
 
@@ -37,9 +43,9 @@ if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
                 for(i=1; i<selisihTahun ; i++){
     
                     if(tahunSekarang % 4 == 0){
-                        hitungHari += 366%7;
+                        hitungHari += 366%jumlahHari;
                     }else{
-                        hitungHari += 365%7;
+                        hitungHari += 365%jumlahHari;
                     }
                     tahunSekarang--;
     
@@ -52,10 +58,10 @@ if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
                 for(j=1; j<selisihTahun ; j++){
     
                     if((tahunSekarang-1) % 4 > 0){
-                        hitungHari += 365%7;
+                        hitungHari += 365%jumlahHari;
                        
                     }else{
-                        hitungHari += 366%7;
+                        hitungHari += 366%jumlahHari;
                     }
                     tahunSekarang--;
     
@@ -71,15 +77,15 @@ if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
         if((tanggalSekarang >= tanggal && bulanSekarang == bulan) || bulanSekarang > bulan){
             if((tanggalSekarang >=29 && bulanSekarang == 2) || bulanSekarang > 2){
                 if((tahunSekarang) % 4 == 0){
-                    hitungHari += 366%7;
+                    hitungHari += 366%jumlahHari;
                 }else{
-                    hitungHari += 365%7;
+                    hitungHari += 365%jumlahHari;
                 }
             }else{
                 if((tahunSekarang-1) % 4 > 0){
-                    hitungHari += 365%7;
+                    hitungHari += 365%jumlahHari;
                 }else{
-                    hitungHari += 366%7;
+                    hitungHari += 366%jumlahHari;
                    
                 }
             }
@@ -101,14 +107,13 @@ if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
 
                 if((tahunSekarang-1)%4 == 0){
                     tglTemp = 29;
-                    hitungHari += 365%7;
+                    hitungHari += 365%jumlahHari;
                 }else{
                     if(tglTemp == 28){
-                        hitungHari += 365%7;
+                        hitungHari += 365%jumlahHari;
                     }else if(tglTemp == 29){
-                        hitungHari += 366%7;
+                        hitungHari += 366%jumlahHari;
                         tglTemp = 28;
-                        alert("loopuing ke "+ i);
                     }
                 }
                 tahunSekarang--;    
@@ -123,12 +128,12 @@ if(!(tanggalSekarang == 29 && bulanSekarang == 2)){
         if((tanggalSekarang >= tanggal && bulanSekarang == bulan) || bulanSekarang > bulan){
             if((tahunSekarang-1)%4 == 0){
                 tglTemp = 29;
-                hitungHari += 365%7;
+                hitungHari += 365%jumlahHari;
             }else{
                 if(tglTemp == 28){
-                    hitungHari += 365%7;
+                    hitungHari += 365%jumlahHari;
                 }else if(tglTemp == 29){
-                    hitungHari += 366%7;
+                    hitungHari += 366%jumlahHari;
                     tglTemp = 28;
                 }
             }
@@ -169,9 +174,9 @@ if(selisihBulan >= 2){
         }
         
         if((tahunSekarang % 4 == 0) && bulanTemp == 2){
-            hitungHari += 29%7;
+            hitungHari += 29%jumlahHari;
         }else{
-            hitungHari += bulanArr[bulanTemp-1]%7;
+            hitungHari += bulanArr[bulanTemp-1]%jumlahHari;
            
         }
         document.write(bulanTemp + " ");
@@ -203,7 +208,7 @@ if(selisihBulan == 1){
 
         }
 
-        hitungHari += (tanggalSekarang + (hariBulan - tanggal)) % 7;
+        hitungHari += (tanggalSekarang + (hariBulan - tanggal)) % jumlahHari;
       
     
 
@@ -214,7 +219,7 @@ selisihTanggal = 0;
 if(selisihBulan == 0){
     if(tanggalSekarang > tanggal){
         selisihTanggal = tanggalSekarang - tanggal;
-        hitungHari += selisihTanggal % 7;
+        hitungHari += selisihTanggal % jumlahHari;
 
 
     }else if(tanggalSekarang < tanggal){
@@ -244,8 +249,8 @@ if(selisihBulan == 0){
 
         
         }
-        hitungHari += (jmlTemp - selisihTanggal)%7;
-       
+        hitungHari += (jmlTemp - selisihTanggal)%jumlahHari;
+       tahunSekarang--;
     }
 
     
@@ -253,12 +258,12 @@ if(selisihBulan == 0){
 }
 
 
-sisaHari = hitungHari % 7;
+sisaHari = hitungHari % jumlahHari;
 
 
 //hariCounter = t.getDay()+1;
-hariCounter = 5;
-//hariCounter = 1; // diambil dari perhitungan pasaran dengan tanggal 1 jan 22 sebagai patokan
+//hariCounter = 5;
+hariCounter = 1; // diambil dari perhitungan pasaran dengan tanggal 1 jan 22 sebagai patokan
 p = sisaHari;
 
 while (p>0) {
@@ -270,8 +275,7 @@ while (p>0) {
 }
 
 document.write("<br>inputan " + tanggal + "/" + bulan + "/" + tahun + "<br>");
-document.write("<br>tahun sekarang adalah " + tahunSekarang + "<br>");
-document.write("jumlah hari " + hitungHari%7 + "<br>");   
+document.write("sisa hari " + hitungHari%jumlahHari + "<br>");   
 document.write("hari " + hariArr[hariCounter-1] + "<br>"); 
 //document.writeln("pasaran: "+ hariCounter +"<br>"); 
 //document.writeln("Pasaran: " + pasaranArr[hariCounter-1]);
