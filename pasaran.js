@@ -3,9 +3,9 @@
 
 //
 
-inputTanggal = 6;
-inputBulan = 3;
-inputTahun = 2020;
+inputTanggal = 6;   // Masukkan tanggal lahir disini
+inputBulan = 3;     // Masukkan bulan lahir disini (antara 1-12)
+inputTahun = 2020;  // Masukkan tahun lahir disini
 
 //
 
