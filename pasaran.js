@@ -1,30 +1,47 @@
 
 // Masukkan tanggal lahir kedalam variabel ini...    //
 
+//
 
-tanggal = 30;
-bulan = 6;
-tahun = 2020;
+inputTanggal = 6;
+inputBulan = 3;
+inputTahun = 2020;
 
+//
 
 // -------------------------------------------------//
 
-t = new Date();
+//t = new Date();
 //tanggalSekarang = t.getDate();
 //bulanSekarang = t.getMonth() + 1;
 //tahunSekarang = t.getFullYear();
-
 tanggalSekarang = 1;
 bulanSekarang = 1;
 tahunSekarang = 2022;
+
+check = false;
+
+if((inputBulan > bulanSekarang && inputTahun == tahunSekarang) || inputTahun > tahunSekarang){
+    tanggal = tanggalSekarang;
+    bulan = bulanSekarang;
+    tahun = tahunSekarang;
+
+    tanggalSekarang = inputTanggal;
+    bulanSekarang = inputBulan;
+    tahunSekarang = inputTahun;
+    check = true;
+   
+}else{
+    tanggal = inputTanggal;
+    bulan = inputBulan;
+    tahun = inputTahun;
+}
 
 bulanArr = [31,28,31,30,31,30,31,31,30,31,30,31];
 hariArr = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 pasaranArr = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"];
 
 jumlahHari = 5;
-
-
 
 
 
@@ -248,8 +265,10 @@ if(selisihBulan == 0){
 
         
         }
+        
         hitungHari += (jmlTemp - selisihTanggal)%jumlahHari;
        tahunSekarang--;
+       
     }
 
     
@@ -261,23 +280,38 @@ sisaHari = hitungHari % jumlahHari;
 
 
 //hariCounter = t.getDay()+1;
-//hariCounter = 5;
-hariCounter = 1; // diambil dari perhitungan pasaran dengan tanggal 1 jan 22 sebagai patokan
+hariCounter = 1;
+//hariCounter = 1; // diambil dari perhitungan pasaran dengan tanggal 1 jan 22 sebag ai patokan
 p = sisaHari;
 
-while (p>0) {
-    hariCounter--;
-    if (hariCounter == 0) {
-        hariCounter = jumlahHari;
+if(!check){
+
+ // sek durung rampung
+    while (p>0) {
+        hariCounter--;
+        if (hariCounter == 0) {
+            hariCounter = jumlahHari;
+        }
+        p--;
     }
-    p--;
+}else{
+    // sek durung rampung
+    while (p>0) {
+        hariCounter++;
+        if (hariCounter == jumlahHari+1) {
+            hariCounter = 1;
+        }
+        p--;
+    }
+    
 }
 
 document.write("<h1>Track Pasaran</h1>")
-document.write("<br>inputan " + tanggal + "/" + bulan + "/" + tahun + "<br>");
+document.write("<br>inputan " + inputTanggal + "/" + inputBulan + "/" + inputTahun + "<br>");
 //document.write("sisa hari " + hitungHari%jumlahHari + "<br>");   
-document.write("<b>Pasaran :  " + pasaranArr[hariCounter-1] + "</b><br>"); 
+document.write("<br><b>Pasaran :  " + pasaranArr[hariCounter-1] + "</b><br>"); 
 document.writeln("<br>");
-document.writeln("*Hanya bisa menghitung tanggal lahir sebelum 1 januari 2022")
+//document.writeln("*Hanya bisa menghitung tanggal lahir sebelum 1 januari 2022");
 //document.writeln("pasaran: "+ hariCounter +"<br>"); 
-//document.writeln("Pasaran: " + pasaranArr[hariCounter-1]);
+//document.writeln("<br>");
+//document.writeln("<b>Hari :  " + hariArr[hariCounter-1] + "</b><br></br>");
